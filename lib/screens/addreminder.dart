@@ -13,6 +13,7 @@ class _addReminderState extends State<addReminder> {
    @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -26,6 +27,7 @@ class _addReminderState extends State<addReminder> {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -48,6 +50,7 @@ class _addReminderState extends State<addReminder> {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
+                      color:Colors.blue,
                       elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -79,11 +82,43 @@ class _addReminderState extends State<addReminder> {
                   )
                 ],
               ),
+                Padding(
+        padding: const EdgeInsets.only(top: 20 ,right: 140,left: 20),
+        child: Column(
+         children:[ Text('Set New Reminders',style: TextStyle(
+        color: Colors.black ,
+        fontSize: 30,
+        fontWeight: FontWeight.bold 
+      ),),
+      Text('Here...',style: TextStyle(
+        color: Colors.black ,
+        fontSize: 28,
+        fontWeight: FontWeight.bold 
+      ),),
+    ] )
+      ),
               Padding(
-  padding: EdgeInsets.only(top: 150,right: 40,left: 40),
+  padding: EdgeInsets.only(top: 90,right: 40,left: 40),
   child:   Column(
   
     children: [
+    //   Padding(
+    //     padding: const EdgeInsets.only(),
+    //     child: Column(
+    //      children:[ Text('Set New Reminders',style: TextStyle(
+    //     color: Colors.white 
+    //   ),),
+    //   Text('Here...',style: TextStyle(
+    //     color: Colors.white 
+    //   ),),
+    // ] )
+    //   ),
+      // Text('Set New Reminders',style: TextStyle(
+      //   color: Colors.white 
+      // ),),
+      // Text('Here...',style: TextStyle(
+      //   color: Colors.white 
+      // ),),
   
           TextField(
   
@@ -94,10 +129,12 @@ class _addReminderState extends State<addReminder> {
             borderRadius: BorderRadius.only(topRight:Radius.circular(50),bottomRight: Radius.circular(50),bottomLeft: Radius.circular(40))
           ),
       
-           hintStyle :TextStyle (color: Colors.white) ,
+           hintStyle :TextStyle (color: Color.fromARGB(255, 255, 255, 255),
+           fontWeight: FontWeight.bold ) ,
           fillColor: const Color.fromARGB(255, 146, 145, 145),
           filled: true,
          hintText: '    Reminder'
+         ,
   
       
   
@@ -111,7 +148,8 @@ class _addReminderState extends State<addReminder> {
         border: OutlineInputBorder(
             borderRadius: BorderRadius.only(topRight:Radius.circular(50),bottomRight: Radius.circular(50),bottomLeft: Radius.circular(40))
           ),
-          hintStyle :TextStyle (color: Colors.white) ,
+          hintStyle :TextStyle (color: Colors.white ,
+           fontWeight: FontWeight.bold ) ,
           fillColor: const Color.fromARGB(255, 146, 145, 145),
           filled: true,
          hintText: '    Reminder Type'
@@ -127,7 +165,8 @@ class _addReminderState extends State<addReminder> {
         border: OutlineInputBorder(
             borderRadius: BorderRadius.only(topRight:Radius.circular(50),bottomRight: Radius.circular(50),bottomLeft: Radius.circular(40))
           ),
-          hintStyle :TextStyle (color: Colors.white) ,
+          hintStyle :TextStyle (color: Colors.white ,
+           fontWeight: FontWeight.bold ) ,
           fillColor: const Color.fromARGB(255, 146, 145, 145),
           filled: true,
          hintText: '    Date'
@@ -143,7 +182,8 @@ class _addReminderState extends State<addReminder> {
         border: OutlineInputBorder(
             borderRadius: BorderRadius.only(topRight:Radius.circular(50),bottomRight: Radius.circular(50),bottomLeft: Radius.circular(40))
           ),
-          hintStyle :TextStyle (color: Colors.white) ,
+          hintStyle :TextStyle (color: Colors.white ,
+           fontWeight: FontWeight.bold ) ,
           fillColor: const Color.fromARGB(255, 146, 145, 145),
           filled: true,
          hintText: '    Time'
@@ -162,9 +202,14 @@ class _addReminderState extends State<addReminder> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
+                color: Colors.black 
               ),
             ),
             DropdownButton(
+              
+              iconDisabledColor: const Color.fromARGB(255, 0, 0, 0) ,
+              iconEnabledColor: const Color.fromARGB(255, 0, 0, 0) ,
+              dropdownColor: Color.fromARGB(255, 255, 255, 255) ,
               value: selectedIcon,
               onChanged: (newValue) {
                 setState(() {
@@ -174,11 +219,11 @@ class _addReminderState extends State<addReminder> {
               items: [
                 DropdownMenuItem(
                   value: 'Option 1',
-                  child: Icon(Icons.favorite),
+                  child: Icon(Icons.favorite,color: const Color.fromARGB(255, 255, 80, 80) ,),
                 ),
                 DropdownMenuItem(
                   value: 'Option 2',
-                  child: Icon(Icons.star),
+                  child: Icon(Icons.star,color: Colors.blue ,),
                 ),
               ],
             ),
@@ -193,10 +238,10 @@ class _addReminderState extends State<addReminder> {
         },
         child: Text(
           'Add',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: const Color.fromARGB(255, 11, 11, 11),fontWeight: FontWeight.bold ),
         ),
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.black),
+          backgroundColor: MaterialStateProperty.all(Colors.blue ),
         ),
       ),
     ),

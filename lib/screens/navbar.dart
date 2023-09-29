@@ -35,10 +35,13 @@ class _navPageState extends State<navPage> {
       theme: Theme.of(context).copyWith(
         // primaryColor: Colors.deepPurple[400],
         colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: Colors.deepPurple,
+          primarySwatch: Colors.blue,
+          cardColor: Colors.black,
+        
         ),
       ),
       home: Scaffold(
+     backgroundColor: Color.fromARGB(255, 236, 231, 231) ,
         body: PageView(
           controller: _pageController,
           children: _pages,
@@ -50,41 +53,48 @@ class _navPageState extends State<navPage> {
         ),
         // backgroundColor: Colors.deepPurple[400],
         // you can use the molten bar in the scaffold's bottomNavigationBar
-        bottomNavigationBar: MoltenBottomNavigationBar(
-          selectedIndex: _selectedIndex,
-          domeHeight: 25,
-          // specify what will happen when a tab is clicked
-          onTabChange: (clickedIndex) {
-            setState(() {
-              _selectedIndex = clickedIndex;
-            });
-            _pageController.animateToPage(
-              clickedIndex,
-              duration: Duration(milliseconds: 300),
-              curve: Curves.ease,
-            );
-          },
-          // ansert as many tabs as you like
-          tabs: [
-            MoltenTab(
-              icon: Icon(Icons.home,size: 35,),
-            ),
-            MoltenTab(
-              icon: Icon(Icons.heart_broken_rounded,size: 35,),
-              // title: Text('home'),
-            ),
-            MoltenTab(
-              icon: Icon(FontAwesomeIcons.paw,size: 40,),
-            ),
-               MoltenTab(
-              icon: Icon(FontAwesomeIcons.notesMedical,size:30),
-              // title: Text('home'),
-            ),
-               MoltenTab(
-              icon: Icon(Icons.menu,size: 35,),
-              // title: Text('home'),
-            ),
-          ],
+        bottomNavigationBar: Padding(
+          padding: const EdgeInsets.all(8.0),
+          
+          child: MoltenBottomNavigationBar(
+            selectedIndex: _selectedIndex,
+            domeHeight: 25 ,
+            
+            borderRaduis: BorderRadius.circular(80),
+            
+            // specify what will happen when a tab is clicked
+            onTabChange: (clickedIndex) {
+              setState(() {
+                _selectedIndex = clickedIndex;
+              });
+              _pageController.animateToPage(
+                clickedIndex,
+                duration: Duration(milliseconds: 300),
+                curve: Curves.ease,
+              );
+            },
+            // ansert as many tabs as you like
+            tabs: [
+              MoltenTab(
+                icon: Icon(Icons.home,size: 35,),
+              ),
+              MoltenTab(
+                icon: Icon(Icons.heart_broken_rounded,size: 35,),
+                // title: Text('home'),
+              ),
+              MoltenTab(
+                icon: Icon(FontAwesomeIcons.paw,size: 40,),
+              ),
+                 MoltenTab(
+                icon: Icon(FontAwesomeIcons.notesMedical,size:30),
+                // title: Text('home'),
+              ),
+                 MoltenTab(
+                icon: Icon(Icons.menu,size: 35,),
+                // title: Text('home'),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -15,6 +15,8 @@ class _addReminderState extends State<MenuScreen> {
    @override
   Widget build(BuildContext context) {
     return Scaffold(
+           backgroundColor: Color.fromARGB(255, 236, 231, 231) ,
+
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -28,6 +30,7 @@ class _addReminderState extends State<MenuScreen> {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -50,6 +53,7 @@ class _addReminderState extends State<MenuScreen> {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -70,7 +74,7 @@ class _addReminderState extends State<MenuScreen> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
-                                  // color: Colors.black54,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
@@ -82,55 +86,68 @@ class _addReminderState extends State<MenuScreen> {
                 ],
               ),
               SizedBox(height: 50,),
-              ListTile(
-                leading: CircleAvatar(
-                  radius: 25,
-                ), // Icon for the first tile
-                title: Text('john',style: TextStyle(fontWeight: FontWeight.bold),),
-                subtitle: Text('john@123'),
-                onTap: () {
-                  // setState(() {
-                  //   selectedIcon = 'Option 1';
-                  // });
-                  // Handle the click event here
-                },
-              ),
-              SizedBox(height: 10,),
-              ListTile(
-                leading: Icon(FontAwesomeIcons.edit), 
-                title: Text('Edit Profile'),
-                onTap: () {
-                 Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => editProfile()),
-      );
-                },
-              ),
-              ListTile(
-                leading: Icon(FontAwesomeIcons.user), 
-                title: Text('My Profile'),
-                onTap: () {
-                  
-                },
-              ),
-              SizedBox(height: 300,),
-              ListTile(
-                leading: Icon(FontAwesomeIcons.signOut), 
-                title: Text('Log Out'),
-                onTap: () {
-                  Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => loginscreen()),
-      );
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.help),
-                title: Text('About Us'),
-                onTap: () {
-                  
-                },
-              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 180),
+                child: Container(
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.only(topRight: Radius.circular(40),bottomRight: Radius.circular(40))
+                  ),
+                  child: Column(
+                    children:[
+                  ListTile(
+                    leading: CircleAvatar(
+                      radius: 25,
+                    ), // Icon for the first tile
+                    title: Text('john',style: TextStyle(fontWeight: FontWeight.bold),),
+                    subtitle: Text('john@123'),
+                    onTap: () {
+                      // setState(() {
+                      //   selectedIcon = 'Option 1';
+                      // });
+                      // Handle the click event here
+                    },
+                  ),
+                  SizedBox(height: 10,),
+                  ListTile(
+                    leading: Icon(FontAwesomeIcons.edit), 
+                    title: Text('Edit Profile'),
+                    onTap: () {
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => editProfile()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(FontAwesomeIcons.user), 
+                    title: Text('My Profile'),
+                    onTap: () {
+                      
+                    },
+                  ),
+                  SizedBox(height: 250,),
+                  ListTile(
+                    leading: Icon(FontAwesomeIcons.signOut), 
+                    title: Text('Log Out'),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => loginscreen()),
+                      );
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.help),
+                    title: Text('About Us'),
+                    onTap: () {
+                      
+                    },
+                  ),
+                            ]),
+                ),
+              )
             ],
           ),
         ),
@@ -148,5 +165,5 @@ ShapeBorder kBackButtonShape = RoundedRectangleBorder(
 
 Widget kBackBtn = Icon(
   Icons.arrow_back_ios,
-  color: Colors.black54,
+  color: Colors.white,
 );

@@ -7,6 +7,8 @@ class kennelPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+           backgroundColor: Color.fromARGB(255, 236, 231, 231) ,
+
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -19,6 +21,7 @@ class kennelPage extends StatelessWidget {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -41,6 +44,7 @@ class kennelPage extends StatelessWidget {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -61,7 +65,7 @@ class kennelPage extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
-                                  // color: Colors.black54,
+                                  color: Colors.white ,
                                 ),
                               ),
                             ),
@@ -86,7 +90,7 @@ class kennelPage extends StatelessWidget {
       height: 150,
       width: 300,
       decoration: BoxDecoration(
-        color: Color.fromARGB(255, 255, 217, 103) ,
+        color: Color.fromARGB(255, 255, 210, 163) ,
         borderRadius: BorderRadius.circular(20)
       ),
       child: Padding(
@@ -136,7 +140,7 @@ class kennelPage extends StatelessWidget {
   style:TextStyle(
     color: Colors.black 
   ) ,),
-  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(const Color.fromARGB(255, 143, 204, 255)))  ,),
+  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue))  ,),
 )
             ]
           )
@@ -154,5 +158,5 @@ ShapeBorder kBackButtonShape = RoundedRectangleBorder(
 
 Widget kBackBtn = Icon(
   Icons.arrow_back_ios,
-  color: Colors.black54,
+  color: Colors.white,
 );

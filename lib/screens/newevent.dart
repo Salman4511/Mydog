@@ -7,6 +7,7 @@ class addEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white  ,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -19,6 +20,7 @@ class addEvent extends StatelessWidget {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -41,6 +43,7 @@ class addEvent extends StatelessWidget {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -62,7 +65,7 @@ class addEvent extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
-                                  // color: Colors.black54,
+                                  // color: Colors.white,
                                 ),
                               ),
                             ),
@@ -73,8 +76,24 @@ class addEvent extends StatelessWidget {
                   )
                 ],
               ),
+               Padding(
+        padding: const EdgeInsets.only(top: 20 ,right: 190,left: 10),
+        child: Column(
+         children:[ Text('Set NewEvents',style: TextStyle(
+        color: const Color.fromARGB(255, 0, 0, 0) ,
+        fontSize: 30,
+        fontWeight: FontWeight.bold 
+      ),),
+       Text(' Here...',style: TextStyle(
+        color: const Color.fromARGB(255, 0, 0, 0) ,
+        fontSize: 28,
+        fontWeight: FontWeight.bold 
+      ),),
+     
+    ] )
+      ),
              Padding(
-  padding: const EdgeInsets.only(top: 100),
+  padding: const EdgeInsets.only(top: 20),
   child: Container(
     width: 250,
     decoration: BoxDecoration(
@@ -95,7 +114,7 @@ class addEvent extends StatelessWidget {
   ),
 ),
  Padding(
-  padding: EdgeInsets.only(top: 20,right: 40,left: 40),
+  padding: EdgeInsets.only(top: 30,right: 40,left: 40),
   child:   Column(
   
     children: [
@@ -109,6 +128,9 @@ class addEvent extends StatelessWidget {
       
   
             labelText:'    Event Name' ,
+            labelStyle: TextStyle(
+              color: const Color.fromARGB(255, 0, 0, 0) 
+            )
   
       
   
@@ -121,7 +143,9 @@ class addEvent extends StatelessWidget {
         decoration: InputDecoration(
   
           labelText:'    Event Venue',
-  
+          labelStyle: TextStyle(
+              color: const Color.fromARGB(255, 0, 0, 0) 
+            )
         )
   
       ),
@@ -131,7 +155,9 @@ class addEvent extends StatelessWidget {
         decoration: InputDecoration(
   
           labelText:'    Event Date',
-  
+          labelStyle: TextStyle(
+              color: const Color.fromARGB(255, 0, 0, 0) 
+            ) 
         )
   
       ),
@@ -139,9 +165,9 @@ class addEvent extends StatelessWidget {
       ElevatedButton(onPressed: () {
         Navigator.push(context,MaterialPageRoute(builder:(context)=>addReminder() ));
       }, child: Text('Add',style: TextStyle(
-        color: Colors.white
+        color: const Color.fromARGB(255, 0, 0, 0)
       ),),style: ButtonStyle(backgroundColor:
-        MaterialStatePropertyAll(Colors.black)),)
+        MaterialStatePropertyAll(Color.fromARGB(255, 33, 170, 255))),)
     ],
   
   ),

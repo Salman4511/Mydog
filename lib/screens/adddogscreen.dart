@@ -13,169 +13,180 @@ class addDog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Column(
-            children: <Widget>[
-              // SizedBox(height: 30,),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Hero(
-                    tag: kBackBtn,
-                    child: Card(
-                      elevation: 10,
-                      shape: kBackButtonShape,
-                      child: MaterialButton(
-                        height: 50,
-                        minWidth: 50,
+      backgroundColor: Colors.white   ,
+      body: Container(
+        // decoration: BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage('assets\images\8l94k255.png'),
+        //     fit: BoxFit.cover,
+        //   ),
+        // ),
+        child: SingleChildScrollView(
+          child: SafeArea(
+            child: Column(
+              children: <Widget>[
+                // SizedBox(height: 30,),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Hero(
+                      tag: kBackBtn,
+                      child: Card(
+                        color: Colors.blue,
                         elevation: 10,
                         shape: kBackButtonShape,
-                        onPressed: (){
-                          Navigator.pop(context);
-                        },
-                        child: kBackBtn,
-                      
-                      ),
-                    ),
-                  ),
-                  // SizedBox(
-                  //   width: 50,
-                  // ),
-                 Hero(
-                    tag: 'title',
-                    transitionOnUserGestures: true,
-                    child: Card(
-                      elevation: 10,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(30),
+                        child: MaterialButton(
+                          height: 50,
+                          minWidth: 50,
+                          elevation: 10,
+                          shape: kBackButtonShape,
+                          onPressed: (){
+                            Navigator.pop(context);
+                          },
+                          child: kBackBtn,
+                        
                         ),
                       ),
-                      child: InkWell(
-                        
-                        child: Container(
-                          width: MediaQuery.of(context).size.width / 1.5,
-                          height: 50,
-                          child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 30),
-                              child: Text(
-                                'Add Dog',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 25,
-                                  // color: Colors.black54,
+                    ),
+                    // SizedBox(
+                    //   width: 50,
+                    // ),
+                   Hero(
+                      tag: 'title',
+                      transitionOnUserGestures: true,
+                      child: Card(
+                        color: Colors.blue,
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(30),
+                          ),
+                        ),
+                        child: InkWell(
+                          
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 1.5,
+                            height: 50,
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 30),
+                                child: Text(
+                                  'Add Dog',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25,
+                                    // color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  )
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 90,left: 30,right: 30),
-                child: Container(
-                  child: Form(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10),
-                            child: CircleAvatar(backgroundImage: 
-                            NetworkImage('https://us.123rf.com/450wm/yuliarudenko/yuliarudenko1903/yuliarudenko190300122/122602687-dog-symbol-icon-round-flat-vector-art-design-color-circle.jpg?ver=6')
-                                          ,radius: 70,
-                                      child: Icon(Icons.add_a_photo),
-                                          ),
-                          ),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: TextFormField(
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-                        fillColor: Colors.grey.shade900,
-                    focusColor: Colors.white,
-                                    hintText: '  Pet Name',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
-                                  ),
-                                ),
-                              ),
-                            
-                            ],
-                          ),
-                          SizedBox(height: 4,),
-                         TextFormField(
-                                  decoration: InputDecoration(
-                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-                                
-                        fillColor: Colors.grey.shade900,
-                    focusColor: Colors.white,
-                                    hintText: '  DOB',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
-                                  ),
-                                ),
-                           SizedBox(height: 4,),
-                          TextFormField(
-                                  decoration: InputDecoration(
-                                       border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-                                 
-                        fillColor: Colors.grey.shade900,
-                    focusColor: Colors.white,
-                                    hintText: '  Months',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
-                                  ),
-                                ),
-                           SizedBox(height: 4,),
-                           TextFormField(
-                                  decoration: InputDecoration(
-                                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
-                                  
-                        fillColor: Colors.grey.shade900,
-                    focusColor: Colors.white,
-                                    hintText: '  Breed',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
-                                  ),
-                                ),
-                           SizedBox(height: 4,),
-                        
-                           SizedBox(height: 4,),
-              
-                          Padding(
-                            padding: const EdgeInsets.only(left: 40),
-                            child: Row(
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 90,left: 30,right: 30),
+                  child: Container(
+                    child: Form(
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10),
+                              child: CircleAvatar(backgroundImage: 
+                              NetworkImage('https://us.123rf.com/450wm/yuliarudenko/yuliarudenko1903/yuliarudenko190300122/122602687-dog-symbol-icon-round-flat-vector-art-design-color-circle.jpg?ver=6')
+                                            ,radius: 70,
+                                        child: Icon(Icons.add_a_photo),
+                                            ),
+                            ),
+                            Row(
                               children: [
-                                FileCase(
-                           tag: 'controller1',
-                              ),
-                              Text('Upload Certificate',style: TextStyle(color: Colors.black,fontWeight: FontWeight.w500),),
-                              const FileUploadIconButton(tag: 'controller1',),
-                              SizedBox(width: 1,),
-                               
+                                Expanded(
+                                  child: TextFormField(
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+                          fillColor: Colors.grey.shade900,
+                      focusColor: Colors.white,
+                                      hintText: '  Pet Name',
+                                       hintStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0))
+                                    ),
+                                  ),
+                                ),
+                              
                               ],
                             ),
-                          ),
-                           ElevatedButton(onPressed: (){Navigator.push(context,
-                      MaterialPageRoute(builder:(context)=>addEvent()));}, 
-                      child:Text('Add',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
-                      style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.blue)) ,),
-                        ],
-                      ),
-                                   ),
+                            SizedBox(height: 4,),
+                           TextFormField(
+                                    decoration: InputDecoration(
+                                          border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+                                  
+                          fillColor: Colors.grey.shade900,
+                      focusColor: Colors.white,
+                                      hintText: '  DOB',
+                                       hintStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0))
+                                    ),
+                                  ),
+                             SizedBox(height: 4,),
+                            TextFormField(
+                                    decoration: InputDecoration(
+                                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
                                    
-                ),
+                          fillColor: Colors.grey.shade900,
+                      focusColor: Colors.white,
+                                      hintText: '  Months',
+                                       hintStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0))
+                                    ),
+                                  ),
+                             SizedBox(height: 4,),
+                             TextFormField(
+                                    decoration: InputDecoration(
+                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
+                                    
+                          fillColor: Colors.grey.shade900,
+                      focusColor: Colors.white,
+                                      hintText: '  Breed',
+                                       hintStyle: TextStyle(color: Color.fromARGB(255, 0, 0, 0))
+                                    ),
+                                  ),
+                             SizedBox(height: 4,),
+                          
+                             SizedBox(height: 4,),
                 
-              ),
-             
-            ],
+                            Padding(
+                              padding: const EdgeInsets.only(left: 40),
+                              child: Row(
+                                children: [
+                                  FileCase(
+                             tag: 'controller1',
+                                ),
+                                Text('Upload Certificate',style: TextStyle(color: Color.fromARGB(255, 0, 0, 0),fontWeight: FontWeight.w500),),
+                                const FileUploadIconButton(tag: 'controller1',),
+                                SizedBox(width: 1,),
+                                 
+                                ],
+                              ),
+                            ),
+                             ElevatedButton(onPressed: (){Navigator.push(context,
+                        MaterialPageRoute(builder:(context)=>addEvent()));}, 
+                        child:Text('Add',style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontWeight: FontWeight.bold),),
+                        style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.blue)) ,),
+                          ],
+                        ),
+                                     ),
+                                     
+                  ),
+                  
+                ),
+               
+              ],
+              
+            ),
             
-          ),
           
-        
+          ),
         ),
       ),
       

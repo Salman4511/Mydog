@@ -7,6 +7,8 @@ class eventScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+           backgroundColor: Color.fromARGB(255, 236, 231, 231) ,
+
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -19,6 +21,7 @@ class eventScreen extends StatelessWidget {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -41,6 +44,7 @@ class eventScreen extends StatelessWidget {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -61,7 +65,7 @@ class eventScreen extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
-                                  // color: Colors.black54,
+                                  color: Colors.white ,
                                 ),
                               ),
                             ),
@@ -134,7 +138,7 @@ class eventScreen extends StatelessWidget {
   style:TextStyle(
     color: Colors.black 
   ) ,),
-  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(const Color.fromARGB(255, 143, 204, 255)))  ,),
+  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue))  ,),
 )
 
             ]
@@ -153,5 +157,5 @@ ShapeBorder kBackButtonShape = RoundedRectangleBorder(
 
 Widget kBackBtn = Icon(
   Icons.arrow_back_ios,
-  color: Colors.black54,
+  color: Colors.white,
 );

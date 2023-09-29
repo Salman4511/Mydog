@@ -8,6 +8,7 @@ class editProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white ,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -20,6 +21,7 @@ class editProfile extends StatelessWidget {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -42,6 +44,7 @@ class editProfile extends StatelessWidget {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -95,8 +98,9 @@ class editProfile extends StatelessWidget {
                                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),
                         fillColor: Colors.grey.shade900,
                     focusColor: Colors.white,
+                    filled: true ,
                                     hintText: '  First Name',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
+                                     hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255))
                                   ),
                                 ),
                               ),
@@ -110,8 +114,9 @@ class editProfile extends StatelessWidget {
                                 
                         fillColor: Colors.grey.shade900,
                     focusColor: Colors.white,
+                    filled: true,
                                     hintText: '  Last Name',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
+                                     hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255))
                                   ),
                                 ),
                            SizedBox(height: 4,),
@@ -121,8 +126,9 @@ class editProfile extends StatelessWidget {
                                  
                         fillColor: Colors.grey.shade900,
                     focusColor: Colors.white,
+                    filled: true,
                                     hintText: '  Address',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
+                                     hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255))
                                   ),
                                 ),
                            SizedBox(height: 4,),
@@ -132,8 +138,9 @@ class editProfile extends StatelessWidget {
                                   
                         fillColor: Colors.grey.shade900,
                     focusColor: Colors.white,
+                    filled: true,
                                     hintText: '  Phone',
-                                     hintStyle: TextStyle(color: const Color.fromARGB(255, 0, 0, 0))
+                                     hintStyle: TextStyle(color: Color.fromARGB(255, 255, 255, 255))
                                   ),
                                 ),
                            SizedBox(height: 4,),
@@ -143,10 +150,10 @@ class editProfile extends StatelessWidget {
                        
                            ElevatedButton(onPressed: (){Navigator.push(context,
                       MaterialPageRoute(builder:(context)=>navPage()));}, 
-                      child:Text('Save Changes',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),),
+                      child:Text('Save Changes',style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontWeight: FontWeight.bold),),
                       style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.blue)) ,),
                         ],
-                      ),
+                      ), 
                                    ),
                                    
                 ),

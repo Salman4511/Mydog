@@ -16,11 +16,11 @@ class _signupscreenState extends State<signupscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0) ,
+      backgroundColor: Colors.white  ,
       body: Container(
         // decoration: BoxDecoration(
         //   image: DecorationImage(
-        //     image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTrcM1wj0cM1lYaAOh32FVI5Dfs4kB-59cnw&usqp=CAU'),
+        //     image: NetworkImage('https://th.bing.com/th/id/OIG.Cpq6DrAgV6JWsHPiUay9?pid=ImgGn'),
         //     fit: BoxFit.cover,
         //   ),
         // ),
@@ -35,6 +35,7 @@ class _signupscreenState extends State<signupscreen> {
                     Hero(
                       tag: kBackBtn,
                       child: Card(
+                        color: Colors.blue ,
                         elevation: 10,
                         shape: kBackButtonShape,
                         child: MaterialButton(
@@ -53,6 +54,7 @@ class _signupscreenState extends State<signupscreen> {
                       tag: 'title',
                       transitionOnUserGestures: true,
                       child: Card(
+                        color: Colors.blue ,
                         elevation: 10,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
@@ -83,15 +85,18 @@ class _signupscreenState extends State<signupscreen> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 50,left: 30,right: 30),
+                  padding: const EdgeInsets.only(top: 40,left: 30,right: 30),
                   child: Container(
                     child: Form(
                       child: Column(
                         children: [
                           CircleAvatar(
+                        
                             backgroundImage: NetworkImage('https://th.bing.com/th/id/OIP.0LvP1YUJ2stgbrp2srwnFQHaHa?pid=ImgDet&w=203&h=203&c=7&dpr=1.3'),
                             radius: 70,
+                            child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo,color: Colors.white ,)),
                           ),
+                           SizedBox(height: 20,), 
                           Row(
                             children: [
                               Expanded(
@@ -108,7 +113,7 @@ class _signupscreenState extends State<signupscreen> {
                                   ),
                                 ),
                               ),
-                              SizedBox(width: 10),
+                              SizedBox(width: 00),
                               Expanded(
                                 child: TextFormField(
                                   decoration: InputDecoration(
@@ -232,7 +237,7 @@ class _signupscreenState extends State<signupscreen> {
                               onPressed: (){
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Landing1()));
                               },
-                              child: Text('SignUp'),
+                              child: Text('SignUp',style: TextStyle(color: Colors.white ),),
                               style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(Colors.blue),
                               ),
@@ -247,7 +252,9 @@ class _signupscreenState extends State<signupscreen> {
                   padding: const EdgeInsets.only(left: 80),
                   child: Row(
                     children: [
-                      Text('Already have an account?'),
+                      Text('Already have an account?',style: TextStyle(
+                        color: Colors.black  
+                      ),),
                       TextButton(
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>loginscreen()));

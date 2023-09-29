@@ -19,6 +19,7 @@ class reminderScreen extends StatelessWidget {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -41,7 +42,7 @@ class reminderScreen extends StatelessWidget {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
-                      color: Color.fromARGB(255, 255, 224, 130),
+                      color: Colors.blue,
                       elevation: 10,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
@@ -62,7 +63,7 @@ class reminderScreen extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
-                                  // color: Colors.black54,
+                                  color: Colors.white
                                 ),
                               ),
                             ),
@@ -105,7 +106,7 @@ class reminderScreen extends StatelessWidget {
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Color.fromARGB(255, 243, 220, 151),
                   borderRadius: BorderRadius.circular(9),
                 ),
                 child: Column(
@@ -130,7 +131,7 @@ class reminderScreen extends StatelessWidget {
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Color.fromARGB(255, 249, 164, 151),
                   borderRadius: BorderRadius.circular(9),
                 ),
                 child: Column(
@@ -155,7 +156,7 @@ class reminderScreen extends StatelessWidget {
                 height: 100,
                 width: 100,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Color.fromARGB(255, 255, 204, 122),
                   borderRadius: BorderRadius.circular(9),
                 ),
                 child:  Column(
@@ -209,7 +210,7 @@ Padding(
   style:TextStyle(
     color: Colors.black 
   ) ,),
-  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(const Color.fromARGB(255, 143, 204, 255)))  ,),
+  style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.blue))  ,),
 )
             ]
           )

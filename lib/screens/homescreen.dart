@@ -18,6 +18,7 @@ class _homeScreenState extends State<homeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     backgroundColor: Color.fromARGB(255, 236, 231, 231) ,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -30,6 +31,7 @@ class _homeScreenState extends State<homeScreen> {
                   Hero(
                     tag: kBackBtn,
                     child: Card(
+                      color: Colors.blue ,
                       elevation: 10,
                       shape: kBackButtonShape,
                       child: MaterialButton(
@@ -52,7 +54,8 @@ class _homeScreenState extends State<homeScreen> {
                     tag: 'title',
                     transitionOnUserGestures: true,
                     child: Card(
-                      elevation: 10,
+                      color: Colors.blue,
+                      elevation: 10 ,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(30),
@@ -72,7 +75,7 @@ class _homeScreenState extends State<homeScreen> {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 25,
-                                  // color: Colors.black54,
+                                  color: Colors.white ,
                                 ),
                               ),
                             ),
@@ -98,8 +101,10 @@ class _homeScreenState extends State<homeScreen> {
                     // color: Colors.amber,
                     height: 30,
                     width: 86,
-                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),color: Color.fromARGB(255, 47, 210, 255)),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue ),
                     child: DropdownButton(
+                      iconEnabledColor: Colors.black ,
                       value: selectedIcon,
                       onChanged: (newValue) {
                         setState(() {
@@ -137,7 +142,7 @@ class _homeScreenState extends State<homeScreen> {
   padding: const EdgeInsets.only(right: 35, top: 10),
   child: Container(
     decoration: BoxDecoration(
-      color: Color.fromARGB(255, 223, 223, 223),
+      color: Colors.white,
       borderRadius: BorderRadius.circular(20),
     ),
     child: Column(
@@ -175,7 +180,7 @@ Padding(
     width: 350,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(20),
-      color: Color.fromARGB(255, 203, 203, 203),
+      color: Colors.white ,
     ),
     child: Column(
       children: [
@@ -199,7 +204,7 @@ Padding(
                 height: 150,
                 width: 150,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Colors.blue,
                   borderRadius: BorderRadius.circular(9),
                 ),
                 child: Column(
@@ -221,7 +226,7 @@ Padding(
                 height: 150,
                 width: 150,
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Colors.blue ,
                   borderRadius: BorderRadius.circular(9),
                 ),
                 child: Column(
@@ -260,5 +265,5 @@ ShapeBorder kBackButtonShape = RoundedRectangleBorder(
 
 Widget kBackBtn = Icon(
   Icons.arrow_back_ios,
-  color: Colors.black54,
+  color: Color.fromARGB(133, 255, 255, 255),
 );
